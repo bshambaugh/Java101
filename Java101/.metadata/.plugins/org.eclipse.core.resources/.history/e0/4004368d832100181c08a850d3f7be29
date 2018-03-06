@@ -1,0 +1,28 @@
+package functionjava10_c;
+
+import java.util.List;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		
+       String inputFile = "input.txt";
+			
+		List<String> accepts = HighlevelProtocols.linkList(inputFile);
+		
+		// create another list here that holds the valid links
+		
+      for(String o : accepts){
+    	  System.out.println(o);   
+    	  System.out.println(IsValidLink.validLink(o));
+       }
+      
+      LinkProcessor.loadPage(myURL);
+
+	}
+		
+}

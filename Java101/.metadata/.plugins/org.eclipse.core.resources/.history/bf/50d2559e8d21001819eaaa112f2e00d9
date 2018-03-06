@@ -1,0 +1,34 @@
+package functionjava10_c;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
+import java.util.function.Function;
+
+import org.apache.commons.io.Charsets;
+import org.apache.commons.io.IOUtils;
+
+public abstract class LoadFile<T,R> implements Function<T,R> {
+
+	protected final String linkfile;
+
+	public LoadFile(String linkfileFile) {
+		super();
+		//load the linkfile file
+		InputStream is = getClass().getResourceAsStream(linkfileFile);
+		StringWriter writer = new StringWriter();
+		try {
+			IOUtils.copy(is, writer, Charsets.UTF_8);
+		} catch (IOException e) {
+			throw new IllegalStateException("Could not read linkfile from file", e);
+		}
+		this.linkfile = writer.toString();
+	}
+
+	public String getlinkfile() {
+		return linkfile;
+	}
+
+}
+
+// https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html

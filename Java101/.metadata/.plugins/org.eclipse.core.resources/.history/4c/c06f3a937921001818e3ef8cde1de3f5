@@ -1,0 +1,20 @@
+package functionjava10_c;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+
+public class IsValidLink {
+	
+	public static boolean validLink(String aURI) {	
+		
+		 try {	
+			URI newuri = new URI(aURI);
+			if(newuri.getUserInfo() == null && newuri.getFragment() == null && newuri.getQuery() == null && newuri.getPort() == -1) {
+				return true;
+			}
+		 } catch (URISyntaxException e) {
+			 e.printStackTrace();
+		 }
+		return false;
+
+}
