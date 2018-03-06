@@ -1,0 +1,34 @@
+package functionjava10_c;
+
+import java.util.List;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		
+       String inputFile = "input.txt";
+			
+		List<String> accepts = HighlevelProtocols.linkList(inputFile);
+		
+		System.out.println(accepts);
+
+	}
+		
+		/*
+		
+		 try {
+			 List<String> accepts = HighlevelProtocols.linkList(args[0]);
+	         System.out.println(args[0]);
+	         System.out.println(accepts);
+	    }
+	    catch (ArrayIndexOutOfBoundsException e)  {
+	       e.printStackTrace();
+	    } 
+	     finally {
+	        System.out.println("Please enter a filename");
+	     }
+		
+	}
+	
+	*/
+}

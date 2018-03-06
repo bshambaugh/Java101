@@ -1,0 +1,13 @@
+package functionjava10_c;
+
+public class ApplyRegexToFile {
+	
+	private static ApplyRegexFunction LoadedFile;
+	
+	public static ApplyRegexFunction getLoadedFile(String input) {
+
+	   LoadedFile = new ApplyRegexFunction(input);
+		return LoadedFile;
+	}
+	
+}
